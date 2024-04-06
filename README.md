@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este es un proyecto en Next.js con el fin de explicar cómo desplegar una tienda con su respectiva base de datos desde vercel y poder hacer la reportería desde Grafana.
 
-## Getting Started
+## Requerimientos:
+- Tener instalado Node.js versión 18 o superior.
+- Tener cuenta en GitHub
+- Tener cuenta en Vercel.com
+- Tener cuenta en Grafana
 
-First, run the development server:
-
+## Pasos:
+1. Forkear este repositorio en GitHub a tu propio repo de GitHub 
+2. Crear una cuenta en Vercel.com
+3. Conectar tu cuenta de Github a Vercel.com
+4. Importar el Proyecto la-tienda a tu cuenta de Vercel
+5. No te preocupes, te va a dar un error cuando se te esté desplegando la aplicación.  :)
+6. Ir a STORAGE y conectar una base de datos en POSTGRES
+7. Conectar el proyecto la-tienda a la base de datos de POSTGRES
+8. Clonar el proyecto a tu computador local 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone $URL
+cd la-tienda
+npm install
+export POSTGRES_URL= $DATABASE
+npx prisma migrate dev
+npx prima db seed
 ```
+9. Volver a Vercel, a DEPLOYMENTS y re-deployar la aplicación
+10. Ahora en la aplicación se puede utilizar, tocando el boton VISIT.
+11. FELICITACIONES! Puedes probar la aplicación.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Reportería con Grafana
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Ir a Grafana y crearse una cuenta conectando tu cuenta de GitHub.
+2. Instanciar un Grafana
+3. Crear un datasource 
+4. Agregar la configuración que venga desde el storage de Vercel
+5. Crear Graficos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Consultas de SQL 
