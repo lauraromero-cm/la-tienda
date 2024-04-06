@@ -21,7 +21,7 @@ cd la-tienda
 npm install
 export POSTGRES_URL= $DATABASE
 npx prisma migrate dev
-npx prima db seed
+npx prisma db seed
 ```
 9. Volver a Vercel, a DEPLOYMENTS y re-deployar la aplicación
 10. Ahora en la aplicación se puede utilizar, tocando el boton VISIT.
